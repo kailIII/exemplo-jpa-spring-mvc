@@ -1,4 +1,4 @@
-package br.ufc.quixada.npi.web;
+package br.ufc.quixada.npi.controller;
 
 import javax.inject.Inject;
 import javax.inject.Named;
@@ -18,7 +18,14 @@ public class ContatoController {
 	@RequestMapping(value="/", method = RequestMethod.GET)
 	public String listarContatos(ModelMap model) {
 		model.addAttribute("contatos", cs.findAll());
-		return "listar_contatos";
+		return "contato/listar_contatos";
 	}
- 
+
+	@RequestMapping(value="/hello", method = RequestMethod.GET)
+	public String hello(ModelMap model) {
+		model.addAttribute("nome", "João");
+		return "contato/ola";
+	}
+
+	
 }
